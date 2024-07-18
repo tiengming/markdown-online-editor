@@ -98,8 +98,8 @@
 </template>
 
 <script>
-import { exportTextMap } from '@config/constant';
-import 'hint.css';
+import { exportTextMap } from '@config/constant'
+import 'hint.css'
 
 export default {
   name: 'HeaderNav',
@@ -108,7 +108,7 @@ export default {
     return {
       isMobile: window.innerWidth <= 768,
       titleText: window.$appTitle,
-      exportTextMap
+      exportTextMap,
     }
   },
 
@@ -147,8 +147,8 @@ export default {
     },
     handleCommand(command) {
       this.$router.push(command)
-    }
-  }
+    },
+  },
 }
 </script>
 

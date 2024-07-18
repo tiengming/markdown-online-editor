@@ -15,8 +15,6 @@ jobs:
       with:
         node-version: '16'
 
-    - name: Set Node.js Options
-      run: echo "NODE_OPTIONS=--openssl-legacy-provider" >> $GITHUB_ENV
 
     - name: Checkout main
       uses: actions/checkout@v3
@@ -24,10 +22,10 @@ jobs:
         ref: master
 
     - name: Install Dependencies
-      run: yarn
+      run: npm install
 
     - name: Build
-      run: yarn start
+      run: npm run build
 
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@v4.3.3

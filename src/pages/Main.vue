@@ -8,9 +8,9 @@
 </template>
 
 <script>
-import Vditor from 'vditor'
-import HeaderNav from './partials/HeaderNav'
-import defaultText from '@config/default'
+import defaultText from '@config/default';
+import Vditor from 'vditor';
+import HeaderNav from './partials/HeaderNav';
 
 export default {
   name: 'index-page',
@@ -19,21 +19,18 @@ export default {
     return {
       isLoading: true,
       isMobile: window.innerWidth <= 960,
-      vditor: null,
+      vditor: null
     }
   },
 
   created() {
-    console.log(
-      '%c 倾城之链：倾心缔造，痴心为你。 https://nicelinks.site/',
-      'font-size:2.113em;color: #2edfa3'
-    )
+    console.log('%c 美好世界。 https://nav.buxiantang.top/', 'font-size:2.113em;color: #2edfa3')
     this.setDefaultText()
     console.log = () => {}
   },
 
   components: {
-    HeaderNav,
+    HeaderNav
   },
 
   mounted() {
@@ -55,7 +52,7 @@ export default {
         mode: 'sv',
         preview: {
           delay: 100,
-          show: !this.isMobile,
+          show: !this.isMobile
         },
         outline: true,
         upload: {
@@ -70,8 +67,8 @@ export default {
             request.open('POST', 'https://sm.ms/api/upload')
             request.onload = that.onloadCallback
             request.send(formData)
-          },
-        },
+          }
+        }
       }
       this.vditor = new Vditor('vditor', options)
       this.vditor.focus()
@@ -81,7 +78,7 @@ export default {
       if (currentTarget.status !== 200) {
         return this.$message({
           type: 'error',
-          message: currentTarget.status + ' ' + currentTarget.statusText,
+          message: currentTarget.status + ' ' + currentTarget.statusText
         })
       }
       let resp = JSON.parse(currentTarget.response)
@@ -89,7 +86,7 @@ export default {
       if (resp.code === 'invalid_source') {
         return this.$message({
           type: 'error',
-          message: resp.message,
+          message: resp.message
         })
       }
       if (resp.code === 'image_repeated') {
@@ -104,8 +101,8 @@ export default {
       if (!savedMdContent.trim()) {
         localStorage.setItem('vditorvditor', defaultText)
       }
-    },
-  },
+    }
+  }
 }
 </script>
 

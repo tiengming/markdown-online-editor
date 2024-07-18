@@ -3,53 +3,25 @@
 <template>
   <section class="header-wrapper">
     <h1 class="header-area">
-      <a
-        href="https://markdown.lovejade.cn/?ref=markdown.lovejade.cn&pid=main-title"
-        class="header-link"
-      >
+      <a href="https://markdown.buxiantang.top" class="header-link">
         <img class="mark-markdown" src="@assets/images/markdown.png" alt="在线 Markdown 编辑器" />
         <strong v-if="!isMobile" class="header-text">{{ titleText }}</strong>
       </a>
       <div class="button-group">
-        <a
-          href="https://niceshare.site/?ref=markdown.lovejade.cn"
-          class="header-link"
-          target="_blank"
-          rel="noopener"
-        >
-          <span class="hint--bottom" aria-label="逍遥自在轩">
+        <a href="https://nav.buxiantang.top" class="header-link" target="_blank" rel="noopener">
+          <span class="hint--bottom" aria-label="卜仙堂导航">
             <icon class="header-icon" name="homepage" />
           </span>
         </a>
         <a
           v-if="!isMobile"
-          href="https://quickapp.lovejade.cn/?ref=markdown.lovejade.cn"
+          href="https://buxiantang.top"
           class="header-link"
           target="_blank"
           rel="noopener"
         >
-          <span class="hint--bottom" aria-label="静轩之别苑">
+          <span class="hint--bottom" aria-label="卜仙堂">
             <icon class="header-icon" name="quickapp" />
-          </span>
-        </a>
-        <a
-          v-if="!isMobile"
-          href="https://wechat.jeffjade.com/?ref=markdown.lovejade.cn"
-          class="header-link"
-          target="_blank"
-          rel="noopener"
-        >
-          <span class="hint--bottom" aria-label="公众号 Markdown 排版">
-            <icon class="header-icon" name="wechat" />
-          </span>
-        </a>
-        <a
-          v-if="!isMobile"
-          href="https://github.lovejade.cn/?ref=markdown.lovejade.cn"
-          class="header-link"
-        >
-          <span class="hint--bottom" aria-label="作者 Github">
-            <icon class="header-icon" name="github" />
           </span>
         </a>
         <a
@@ -126,8 +98,8 @@
 </template>
 
 <script>
-import 'hint.css'
-import { exportTextMap } from '@config/constant'
+import { exportTextMap } from '@config/constant';
+import 'hint.css';
 
 export default {
   name: 'HeaderNav',
@@ -136,7 +108,7 @@ export default {
     return {
       isMobile: window.innerWidth <= 768,
       titleText: window.$appTitle,
-      exportTextMap,
+      exportTextMap
     }
   },
 
@@ -175,8 +147,8 @@ export default {
     },
     handleCommand(command) {
       this.$router.push(command)
-    },
-  },
+    }
+  }
 }
 </script>
 

@@ -1,26 +1,38 @@
-name: Build and Deploy
+name: Build and Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - master  # 设置为你的主分支名称
+      - master  # 确保这是你的主分支名称
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
+    # 检出主分支
     - name: Checkout main
       uses: actions/checkout@v3
       with:
-        ref: main
+        ref: master
 
+    # 调试步骤：输出当前分支和Git版本
+    - name: Debug
+      run: |
+        echo "Print git version"
+        git --version
+        echo "Print current branch"
+        git rev-parse --abbrev-ref HEAD
+
+    # 安装依赖
     - name: Install Dependencies
       run: yarn
 
+    # 构建项目
     - name: Build
       run: yarn start
 
+    # 部署到GitHub Pages
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@v4.3.3
       with:

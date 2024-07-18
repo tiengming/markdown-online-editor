@@ -10,11 +10,11 @@ yarn run build
 cd ./dist
 
 # 如果是发布到自定义域名
-echo 'markdown.lovejade.cn' > CNAME
+echo 'markdown.buxiantang.top' > CNAME
 
 git init
 git add -A
 git commit -m '🎉 update release'
 
-git push -f git@github.com:nicejade/markdown-online-editor.git main:gh-pages
+git push -f git@github.com:tiengming/markdown-online-editor.git main:gh-pages
 cd -
